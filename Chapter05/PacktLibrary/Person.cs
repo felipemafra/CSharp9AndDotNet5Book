@@ -6,5 +6,6 @@ namespace Packt.Shared
     {
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public WondersOfTheAncientWorld FavoriteAncientWonder { get; set; }
     }
 }
