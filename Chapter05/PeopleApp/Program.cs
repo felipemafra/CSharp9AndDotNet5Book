@@ -12,6 +12,7 @@ namespace PeopleApp
             bob.Name = "Bob Smith";
             bob.DateOfBirth = new DateTime(1965, 12, 22);
             bob.FavoriteAncientWonder = WondersOfTheAncientWorld.StetueOfZeusAtOlympia;
+            bob.BucketList = WondersOfTheAncientWorld.HangingGardensOfBabylon | WondersOfTheAncientWorld.MausoleumAtHalicarnassus;
             // WriteLine(bob.ToString());
             WriteLine(format: "{0} was born on {1:dddd, d MMMM yyyy}",
                       arg0: bob.Name,
@@ -21,6 +22,23 @@ namespace PeopleApp
                       arg0: bob.Name,
                       arg1: bob.FavoriteAncientWonder,
                       arg2: (int)bob.FavoriteAncientWonder);
+            WriteLine($"{bob.Name}'s bucket list is {bob.BucketList}");
+
+            bob.Children.Add(new Person 
+            {
+                Name = "Alfred"
+            });
+
+            bob.Children.Add(new Person
+            {
+                Name = "Zoe"
+            });
+
+            WriteLine($"{bob.Name} has {bob.Children.Count} children:");
+            for (int child = 0; child < bob.Children.Count; child++)
+            {
+                WriteLine($"{bob.Children[child].Name}");
+            }
         }
     }
 }
