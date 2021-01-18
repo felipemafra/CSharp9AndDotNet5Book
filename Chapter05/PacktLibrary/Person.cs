@@ -10,5 +10,15 @@ namespace Packt.Shared
         public WondersOfTheAncientWorld FavoriteAncientWonder { get; set; }
         public WondersOfTheAncientWorld BucketList { get; set; }
         public List<Person> Children = new List<Person>();
+
+        public void PassingParameters(int x, ref int y, out int z)
+        {
+            // out parameters cannot have a default and must be initialized inside the method
+            z = 99;
+
+            x++;
+            y++;
+            z++;
+        }
     }
 }
