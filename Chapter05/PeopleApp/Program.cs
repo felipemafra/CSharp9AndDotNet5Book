@@ -63,12 +63,15 @@ namespace PeopleApp
             {
                 decimal flightCost = passenger switch
                 {
-                    FirstClassPassenger p when p.AirMiles > 35000 => 1500M,
-                    FirstClassPassenger p when p.AirMiles > 15000 => 1750M,
-                    FirstClassPassenger _ => 2000M,
-                    BusinessClassPassenger _ => 1000M,
+                    FirstClassPassenger p => p.AirMiles switch
+                    {
+                        > 35000 => 1500M,
+                        > 15000 => 1750M,
+                        _ => 2000M,
+                    },
+                    BusinessClassPassenger => 1000M,
                     CoachClassPasenger p when p.CarryOnKG < 10.0 => 500M,
-                    CoachClassPasenger _ => 650M,
+                    CoachClassPasenger => 650M,
                     _ => 800M
                 };
 
