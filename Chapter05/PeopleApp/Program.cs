@@ -99,6 +99,10 @@ namespace PeopleApp
                 arg0: car.Color,
                 arg1: repaintedCar.Color
             );
+
+            var oscar = new ImmutableAnimal("Oscar", "Labrador");
+            var (who, what) = oscar; // cals Deconstructor method
+            WriteLine($"{who} is a {what}.");
         }
     }
 }
