@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Packt.Shared
 {
-    public class Person
+    public class Person : IComparable<Person>
     {
         public string Name { get; set; }
         public DateTime DateOfBirth { get; set; }
@@ -63,5 +63,9 @@ namespace Packt.Shared
             return $"{Name} was born on a {DateOfBirth:dddd}.";
         }
 
+        public int CompareTo(Person other)
+        {
+           return Name.CompareTo(other.Name);
+        }
     }
 }
