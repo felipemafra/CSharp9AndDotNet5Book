@@ -22,6 +22,8 @@ namespace PeopleApp
 
             var baby2 = Person.Procreate(harry, jill);
 
+            var baby3 = harry * mary;
+
             WriteLine($"{harry.Name} has {harry.Children.Count}");
             WriteLine($"{mary.Name} has {mary.Children.Count}");
             WriteLine($"{jill.Name} has {jill.Children.Count}");
@@ -30,6 +32,7 @@ namespace PeopleApp
                 arg0: harry.Name,
                 arg1: harry.Children[0].Name
             );
+            WriteLine($"Baby3: {baby3}");
         }
     }
 }
