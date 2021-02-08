@@ -34,6 +34,30 @@ namespace Packt.Shared
             return Person.Procreate(p1, p2);
         }
 
+        // event delegate field
+        public event EventHandler Shout;
+
+        //data field
+        public int AngerLevel;
+
+        //method
+        public void Poke()
+        {
+            AngerLevel++;
+            if (AngerLevel >= 3)
+            {
+                // if something is listening
+                // then call the delegate
+
+                Shout?.Invoke(this, EventArgs.Empty);
+
+                // if (Shout != null)
+                // {
+                //     Shout(this, EventArgs.Empty);
+                // }
+            }
+        }
+
         public override string ToString()
         {
             return $"{Name} was born on a {DateOfBirth:dddd}.";

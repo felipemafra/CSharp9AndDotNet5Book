@@ -6,6 +6,12 @@ namespace PeopleApp
 {
     class Program
     {
+        private static void Harry_Shout(object sender, EventArgs e)
+        {
+            Person p = (Person)sender;
+            WriteLine($"{p.Name} is this angry {p.AngerLevel}.");
+        }
+
         static void Main(string[] args)
         {
             var harry = new Person
@@ -33,6 +39,14 @@ namespace PeopleApp
                 arg1: harry.Children[0].Name
             );
             WriteLine($"Baby3: {baby3}");
+
+            WriteLine("****************************************");
+            harry.Shout += Harry_Shout;
+            harry.Poke();
+            harry.Poke();
+            harry.Poke();
+            harry.Poke(); 
+            
         }
     }
 }
