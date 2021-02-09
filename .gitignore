@@ -6,6 +6,7 @@
 **.code-workspace
 **/bin/*
 **/obj/*
+**/.vs/*
 
 # Local History for Visual Studio Code
 .history/
