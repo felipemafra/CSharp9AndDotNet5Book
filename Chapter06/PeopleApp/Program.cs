@@ -8,22 +8,16 @@ namespace PeopleApp
     {
         static void Main(string[] args)
         {
-            Employee john = new Employee
-            {
-                Name = "John Jones",
-                DateOfBirth = new DateTime(1985, 11, 18)
-            };
+            string email1 = "pamela@test.com";
+            string email2 = "ian&test.com";
 
-            try
-            {
-                john.TimeTravel(new DateTime(1999, 12, 31));
-                john.TimeTravel(new DateTime(1950, 12, 25));
-            }
-            catch (PersonException ex)
-            {
+            WriteLine("{0} is a valid e-mail address: {1}",
+                arg0: email1,
+                arg1: StringExtensions.IsValidEmail(email1));
 
-                WriteLine(ex.Message);
-            }
+            WriteLine("{0} is a valid e-mail address: {1}",
+                arg0: email2,
+                arg1: StringExtensions.IsValidEmail(email2));
         }
     }
 }
