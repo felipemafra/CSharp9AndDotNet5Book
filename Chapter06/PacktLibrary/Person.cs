@@ -59,6 +59,19 @@ namespace Packt.Shared
             }
         }
 
+        public void TimeTravel(DateTime when)
+        {
+            if (when <= DateOfBirth)
+            {
+                throw new PersonException("If you travel back in time to a date earlier than your birth, " +
+                    "then the universe will explode!");
+            }
+            else
+            {
+                WriteLine($"Welcome to {when:yyyy}!");
+            }
+        }
+
         public void WriteToConsole()
         {
             WriteLine($"{Name} was born on a {DateOfBirth:dddd}.");

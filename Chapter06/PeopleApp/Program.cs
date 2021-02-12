@@ -8,23 +8,21 @@ namespace PeopleApp
     {
         static void Main(string[] args)
         {
-            Employee aliceInEmployee = new Employee
+            Employee john = new Employee
             {
-                Name = "Alice",
-                EmployeeCode = "AA123"
+                Name = "John Jones",
+                DateOfBirth = new DateTime(1985, 11, 18)
             };
-            
-            Person aliceInPerson = aliceInEmployee;
 
-            aliceInEmployee.WriteToConsole();
-            aliceInPerson.WriteToConsole();
-            WriteLine(aliceInEmployee.ToString());
-            WriteLine(aliceInPerson.ToString());
-
-            if (aliceInPerson is Employee)
+            try
             {
-                WriteLine($"{nameof(aliceInPerson)} IS an Employee");
-                Employee explicitAlice = (Employee)aliceInPerson;
+                john.TimeTravel(new DateTime(1999, 12, 31));
+                john.TimeTravel(new DateTime(1950, 12, 25));
+            }
+            catch (PersonException ex)
+            {
+
+                WriteLine(ex.Message);
             }
         }
     }
